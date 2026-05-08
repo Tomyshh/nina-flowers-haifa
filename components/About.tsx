@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 type AboutProps = {
   content: {
@@ -15,52 +15,83 @@ type AboutProps = {
   };
 };
 
-const cardIcons = ["✿", "❀", "❁"];
+const cardGlyphs = ["✦", "❋", "✧"] as const;
 
 export default function About({ content }: AboutProps) {
+  const prefersReducedMotion = useReducedMotion();
   const cards = [
     { title: content.card1Title, text: content.card1Text },
     { title: content.card2Title, text: content.card2Text },
     { title: content.card3Title, text: content.card3Text },
   ];
 
-  return (
-    <section id="about" className="about-root section-wrap">
-      <motion.h2
-        className="section-title"
-        initial={{ opacity: 0, y: 14 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.4 }}
-      >
-        {content.title}
-      </motion.h2>
-      <motion.p
-        className="section-description"
-        initial={{ opacity: 0, y: 14 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.08 }}
-        viewport={{ once: true, amount: 0.4 }}
-      >
-        {content.description}
-      </motion.p>
+  const hoverProps = prefersReducedMotion
+    ? {}
+    : {
+        whileHover: { y: -8, transition: { type: "spring" as const, stiffness: 380, damping: 22 } },
+      };
 
-      <div className="about-grid">
-        {cards.map((card, index) => (
-          <motion.article
-            key={card.title}
-            className="about-card"
+  return (
+    <section id="about" className="about-root section-wrap" aria-labelledby="about-heading">
+      <div className="about-backdrop" aria-hidden />
+      <div className="about-inner">
+        <header className="about-header">
+          <motion.div
+            className="about-flourish"
+            aria-hidden
+            initial={{ opacity: 0, scaleX: 0.3 }}
+            whileInView={{ opacity: 1, scaleX: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+          />
+          <motion.h2
+            id="about-heading"
+            className="section-title about-section-title"
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.55 }}
           >
-            <span className="about-icon" aria-hidden>
-              {cardIcons[index]}
-            </span>
-            <h3>{card.title}</h3>
-            <p>{card.text}</p>
-          </motion.article>
-        ))}
+            {content.title}
+          </motion.h2>
+          <motion.p
+            className="section-description about-section-lead"
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.06, duration: 0.5 }}
+            viewport={{ once: true, amount: 0.4 }}
+          >
+            {content.description}
+          </motion.p>
+        </header>
+
+        <div className="about-grid">
+          {cards.map((card, index) => (
+            <motion.article
+              key={card.title}
+              className="about-card"
+              data-card={index}
+              initial={{ opacity: 0, y: 22 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: index * 0.12,
+                duration: 0.55,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              viewport={{ once: true, amount: 0.25 }}
+              {...hoverProps}
+            >
+              <span className="about-card-shine" aria-hidden />
+              <div className="about-icon-ring" data-variant={index}>
+                <span className="about-icon-glyph" aria-hidden>
+                  {cardGlyphs[index]}
+                </span>
+              </div>
+              <h3 className="about-card-title">{card.title}</h3>
+              <p className="about-card-text">{card.text}</p>
+            </motion.article>
+          ))}
+        </div>
       </div>
     </section>
   );
