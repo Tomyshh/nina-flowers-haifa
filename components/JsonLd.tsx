@@ -1,9 +1,11 @@
+import { SITE_URL } from "@/lib/site-url";
+
 type JsonLdProps = {
   locale: "he" | "en";
 };
 
 export default function JsonLd({ locale }: JsonLdProps) {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://nina-flowers.co.il";
+  const siteUrl = SITE_URL;
   const businessName = locale === "he" ? "פרחי נו\"ש" : "Nina Flowers";
 
   const jsonLd = {
@@ -18,8 +20,10 @@ export default function JsonLd({ locale }: JsonLdProps) {
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "נווה שאנן",
-      addressLocality: "חיפה",
+      streetAddress: locale === "he" ? "גלבוע 32" : "Gilboa 32",
+      addressNeighborhood:
+        locale === "he" ? "נווה שענן" : "Nave Shaanan",
+      addressLocality: locale === "he" ? "חיפה" : "Haifa",
       addressCountry: "IL",
     },
     areaServed: ["חיפה", "ישראל"],

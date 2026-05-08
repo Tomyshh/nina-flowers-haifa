@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { SITE_URL } from "@/lib/site-url";
 import { routing, type AppLocale } from "@/i18n/routing";
 
 type LocaleLayoutProps = {
@@ -9,7 +10,7 @@ type LocaleLayoutProps = {
   params: Promise<{ locale: string }>;
 };
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://nina-flowers.co.il";
+const siteUrl = SITE_URL;
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));

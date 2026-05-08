@@ -71,7 +71,7 @@ export default function Contact({ content }: ContactProps) {
         >
           <iframe
             title={content.mapTitle}
-            src="https://www.google.com/maps?q=%D7%A0%D7%95%D7%95%D7%94%20%D7%A9%D7%90%D7%A0%D7%9F%20%D7%97%D7%99%D7%A4%D7%94&output=embed"
+            src={`https://www.google.com/maps?q=${encodeURIComponent(content.address)}&output=embed`}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             className="contact-map"

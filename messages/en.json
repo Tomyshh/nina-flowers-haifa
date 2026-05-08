@@ -14,6 +14,7 @@
     "kicker": "Flower shop in Haifa",
     "title": "Nina Flowers",
     "subtitle": "Flowers for every occasion, from heart to bloom",
+    "address": "Gilboa 32, Nave Shaanan, Haifa",
     "ctaPrimary": "Call Now",
     "ctaSecondary": "View Gallery"
   },
@@ -39,7 +40,7 @@
     "description": "A short call and we will match the perfect flowers for your occasion.",
     "phoneLabel": "Phone",
     "addressLabel": "Address",
-    "address": "Neve Shaanan, Haifa",
+    "address": "Gilboa 32, Nave Shaanan, Haifa",
     "hoursLabel": "Opening Hours",
     "hoursWeek": "Sun-Thu 08:30-19:00",
     "hoursFriday": "Fri 08:30-14:30",

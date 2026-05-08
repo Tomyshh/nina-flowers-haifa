@@ -6,10 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "export": "next build",
+    "deploy": "npm run export && npx --yes firebase-tools@latest deploy --only hosting"
   },
   "description": "Site vitrine bilingue pour un magasin de fleurs a Haifa.",
   "dependencies": {
+    "firebase": "^11.6.0",
     "framer-motion": "^12.38.0",
     "next": "^16.2.6",
     "next-intl": "^4.11.1",

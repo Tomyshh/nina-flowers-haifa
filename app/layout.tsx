@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans, Heebo, Playfair_Display } from "next/font/google";
+import { SITE_URL } from "@/lib/site-url";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -21,9 +22,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://nina-flowers.co.il",
-  ),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "פרחי נו\"ש",
     template: "%s | פרחי נו\"ש",

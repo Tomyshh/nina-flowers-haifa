@@ -40,27 +40,29 @@ export default async function HomePage({ params }: HomePageProps) {
 
   return (
     <div className="site-shell grain-overlay">
-      <Navbar
-        locale={currentLocale}
-        labels={{
-          about: nav("about"),
-          gallery: nav("gallery"),
-          contact: nav("contact"),
-          callNow: nav("callNow"),
-        }}
-      />
-
       <main>
-        <Hero
-          locale={currentLocale}
-          content={{
-            kicker: hero("kicker"),
-            title: hero("title"),
-            subtitle: hero("subtitle"),
-            ctaPrimary: hero("ctaPrimary"),
-            ctaSecondary: hero("ctaSecondary"),
-          }}
-        />
+        <div className="hero-viewport-block">
+          <Navbar
+            locale={currentLocale}
+            labels={{
+              about: nav("about"),
+              gallery: nav("gallery"),
+              contact: nav("contact"),
+              callNow: nav("callNow"),
+            }}
+          />
+          <Hero
+            locale={currentLocale}
+            content={{
+              kicker: hero("kicker"),
+              title: hero("title"),
+              subtitle: hero("subtitle"),
+              address: hero("address"),
+              ctaPrimary: hero("ctaPrimary"),
+              ctaSecondary: hero("ctaSecondary"),
+            }}
+          />
+        </div>
         <About
           content={{
             title: about("title"),

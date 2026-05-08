@@ -1,6 +1,9 @@
 import type { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/site-url";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://nina-flowers.co.il";
+export const dynamic = "force-static";
+
+const baseUrl = SITE_URL;
 
 export default function robots(): MetadataRoute.Robots {
   return {

@@ -24,6 +24,7 @@ type HeroProps = {
     kicker: string;
     title: string;
     subtitle: string;
+    address: string;
     ctaPrimary: string;
     ctaSecondary: string;
   };
@@ -63,6 +64,7 @@ export default function Hero({ locale, content }: HeroProps) {
       <div className="hero-vignette" aria-hidden />
 
       <div className="section-wrap hero-content">
+        <div className="hero-copy-panel">
         <motion.span
           className="hero-eyebrow"
           initial={{ opacity: 0, y: 10 }}
@@ -112,6 +114,15 @@ export default function Hero({ locale, content }: HeroProps) {
           {locationLine}
         </motion.p>
 
+        <motion.p
+          className="hero-address-line"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.75, delay: 0.38 }}
+        >
+          {content.address}
+        </motion.p>
+
         <motion.div
           className="hero-tags"
           aria-hidden
@@ -139,6 +150,7 @@ export default function Hero({ locale, content }: HeroProps) {
             {content.ctaSecondary}
           </a>
         </motion.div>
+        </div>
       </div>
 
       <span className="visually-hidden">
