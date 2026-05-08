@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "title": "Nina Flowers | Flower Shop in Haifa",
+    "description": "Nina Flowers in Neve Shaanan, Haifa. Flowers for every occasion, custom floral design, fresh bouquets, and personal service. Call now: 04-822-7005",
+    "keywords": "flowers haifa, flowers neve shaanan, flowers nush, flowers israel, florist haifa"
+  },
+  "nav": {
+    "about": "About",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "callNow": "Call Now"
+  },
+  "hero": {
+    "kicker": "Flower shop in Haifa",
+    "title": "Nina Flowers",
+    "subtitle": "Flowers for every occasion, from heart to bloom",
+    "ctaPrimary": "Call Now",
+    "ctaSecondary": "View Gallery"
+  },
+  "about": {
+    "title": "Floral Design with Care",
+    "description": "We create bouquets and arrangements with precision, warmth and a modern touch for every meaningful moment.",
+    "card1Title": "Flowers for Every Occasion",
+    "card1Text": "Birthdays, anniversaries, holidays and all your special family moments.",
+    "card2Title": "Custom Personal Design",
+    "card2Text": "Tailored to your style, colors and budget with personal guidance.",
+    "card3Title": "Freshness & Quality",
+    "card3Text": "Handpicked fresh flowers so every bouquet looks and feels perfect."
+  },
+  "gallery": {
+    "title": "Gallery",
+    "description": "A quick look at bouquets and arrangements we create in our shop.",
+    "openImage": "Open image",
+    "close": "Close",
+    "imageAltPrefix": "Flower bouquet number"
+  },
+  "contact": {
+    "title": "Let us create your next bouquet",
+    "description": "A short call and we will match the perfect flowers for your occasion.",
+    "phoneLabel": "Phone",
+    "addressLabel": "Address",
+    "address": "Neve Shaanan, Haifa",
+    "hoursLabel": "Opening Hours",
+    "hoursWeek": "Sun-Thu 08:30-19:00",
+    "hoursFriday": "Fri 08:30-14:30",
+    "callButton": "Call instantly",
+    "mapTitle": "Store location map"
+  },
+  "footer": {
+    "quickCall": "Quick call",
+    "copyright": "All rights reserved to Nina Flowers"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "backHome": "Back to homepage"
+  }
+}
