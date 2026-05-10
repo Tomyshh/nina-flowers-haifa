@@ -28,6 +28,10 @@ export const metadata: Metadata = {
     template: "%s | פרחי נו\"ש",
   },
   applicationName: "Nina Flowers",
+  icons: {
+    icon: [{ url: "/favicon.ico", type: "image/x-icon" }],
+    shortcut: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
